@@ -2,17 +2,21 @@ const usuarios = require('../database/usuarios.json');
 
 function listar(){
     
-    console.table(usuarios.map(
-        u => {
-            return {
-                id: u.id,
-                nome: u.nome,
-                email: u.email,
+    const formatUsurario = usuarios => {
+        return {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email,
             }
-        
-        
-        }));
     }
+
+    let usuariosFormatados = usuarios.map(formatUsurario);
+
+    console.table (usuariosFormatados)
+
+}
+
+
 function salvar(arrayDeUsuarios){
     const fs = require('fs');
     fs.writeFileSync('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4))
