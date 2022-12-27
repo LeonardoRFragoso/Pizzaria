@@ -10,12 +10,24 @@ function listar(){
             }
     }
 
-    let usuariosFormatados = usuarios.map(formatUsurario);
+    let usuariosFormatados = usuarios.map(formatUsuario);
 
     console.table (usuariosFormatados)
 
 }
 
+
+function listarNomes(){
+    const retornaNome = usuario => {
+        return usuario.nome
+
+    }
+    
+    let nomeDosUsuarios = usuarios.map(retornaNome);
+
+    console.table (nomeDosUsuarios)
+
+}
 
 function salvar(arrayDeUsuarios){
     const fs = require('fs');
