@@ -18,15 +18,7 @@ function listar(){
 
 
 function listarNomes(){
-    const retornaNome = usuario => {
-        return usuario.nome
-
-    }
-    
-    let nomeDosUsuarios = usuarios.map(retornaNome);
-
-    console.table (nomeDosUsuarios)
-
+        console.table(usuarios.map(usuario => usuario.nome))
 }
 
 function salvar(arrayDeUsuarios){
