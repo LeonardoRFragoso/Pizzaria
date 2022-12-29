@@ -12,7 +12,7 @@ function listar(){
 
     let usuariosFormatados = usuarios.map(formatUsuario);
 
-    console.table (usuariosFormatados)
+    console.table(usuariosFormatados)
 
 }
 
@@ -22,8 +22,8 @@ function listarNomes(){
 }
 
 function salvar(arrayDeUsuarios){
-    const fs = require('fs');
-    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4))
+    
+    
 }
 
 function cadastrar(objeto){
@@ -68,6 +68,7 @@ function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento
 
 const UsuariosServices = {
     cadastrar,
+    listarNomes,
     listar,
     salvar, 
     detalhar,
