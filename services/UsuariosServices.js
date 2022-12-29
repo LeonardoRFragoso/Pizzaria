@@ -21,6 +21,15 @@ function listarNomes(){
         console.table(usuarios.map(usuario => usuario.nome))
 }
 
+function buscar(trecho){
+    
+    let temTrechoNoNome = usuario => usuario.nome.includes(trecho);
+
+    let usuariosComNomesBuscados = usuarios.filter(temTrechoNoNome);
+
+    return usuariosComNomesBuscados;
+}
+
 function salvar(arrayDeUsuarios){
 // Seu código aqui
 }
@@ -67,6 +76,7 @@ function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento
 
 const UsuariosServices = {
     cadastrar,
+    buscar,
     listarNomes,
     listar,
     salvar, 
