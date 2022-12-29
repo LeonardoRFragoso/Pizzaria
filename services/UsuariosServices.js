@@ -22,7 +22,7 @@ function listarNomes(){
 }
 
 function salvar(arrayDeUsuarios){
-// Seu código aqui
+
 }
 
 function cadastrar(objeto){
