@@ -6,5 +6,4 @@ servidor.get('/usuarios', () => {console.log("Chegou um requisição")});
 
 servidor.listen(3000);
 
-console.log
 
