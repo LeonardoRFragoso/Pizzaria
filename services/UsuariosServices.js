@@ -31,7 +31,9 @@ function buscar(trecho){
 }
 
 function salvar(arrayDeUsuarios){
-// Seu código aqui
+    const fs = require('fs')
+    fs.writeFileSync('./database/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4));
+    
 }
 
 function cadastrar(objeto){
