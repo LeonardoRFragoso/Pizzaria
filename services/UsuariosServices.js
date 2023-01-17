@@ -1,28 +1,22 @@
-const usuarios = require('../database/usuarios.json');
+const usuarios = require('../databases/usuarios.json');
 
-function listar(){
-    
-    const formatUsurario = usuarios => {
+function listar() {
+
+    console.table(usuarios.map((usuario) => {
         return {
-                id: usuario.id,
-                nome: usuario.nome,
-                email: usuario.email,
-            }
-    }
-
-    let usuariosFormatados = usuarios.map(formatUsuario);
-
-    console.table(usuariosFormatados)
-
+            id: usuario.id,
+            nome: usuario.nome,
+            email: usuario.email,
+        }
+    }))
 }
 
-
-function listarNomes(){
-        console.table(usuarios.map(usuario => usuario.nome))
+function listarNomes() {
+    console.table(usuarios.map(usuario => usuario.nome))
 }
 
-function buscar(trecho){
-    
+function buscar(trecho) {
+
     let temTrechoNoNome = usuario => usuario.nome.includes(trecho);
 
     let usuariosComNomesBuscados = usuarios.filter(temTrechoNoNome);
@@ -30,47 +24,47 @@ function buscar(trecho){
     return usuariosComNomesBuscados;
 }
 
-function salvar(arrayDeUsuarios){
-// Seu código aqui
-}
-
-function cadastrar(objeto){
-// Seu código aqui
-}
-
-function detalhar(idUsuario){
-// Seu código aqui
-}
-
-function remover(idDoUsuarioParaRemover){
+function salvar(arrayDeUsuarios) {
     // Seu código aqui
 }
 
-function alterar(novosDados, idUsuario){
+function cadastrar(objeto) {
     // Seu código aqui
 }
 
-function addEndereco(novoEndereco, idUsuario){
+function detalhar(idUsuario) {
     // Seu código aqui
 }
 
-function removerEndereco(posicaoDoEndereco, idUsuario){
-// Seu código aqui
-}
-
-function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
-// Seu código aqui        
-}
-
-function addFormaDePagamento(novaFormaDePagamento, idUsuario){
+function remover(idDoUsuarioParaRemover) {
     // Seu código aqui
 }
 
-function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
+function alterar(novosDados, idUsuario) {
     // Seu código aqui
 }
 
-function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
+function addEndereco(novoEndereco, idUsuario) {
+    // Seu código aqui
+}
+
+function removerEndereco(posicaoDoEndereco, idUsuario) {
+    // Seu código aqui
+}
+
+function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario) {
+    // Seu código aqui        
+}
+
+function addFormaDePagamento(novaFormaDePagamento, idUsuario) {
+    // Seu código aqui
+}
+
+function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario) {
+    // Seu código aqui
+}
+
+function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario) {
     // Seu código aqui
 }
 
@@ -79,7 +73,7 @@ const UsuariosServices = {
     buscar,
     listarNomes,
     listar,
-    salvar, 
+    salvar,
     detalhar,
     remover,
     alterar,
