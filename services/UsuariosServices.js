@@ -1,78 +1,75 @@
 const usuarios = require('../databases/usuarios.json');
 
-function listar() {
+function listar(){
 
-    console.table(usuarios.map((usuario) => {
+    const formatUsuario = usuario => {
         return {
             id: usuario.id,
             nome: usuario.nome,
             email: usuario.email,
         }
-    }))
+    }
+
+    
+    
+    let usuariosFormatados = usuarios.map(formatUsuario);
+
+    console.table(usuariosFormatados);
 }
 
-function listarNomes() {
-    console.table(usuarios.map(usuario => usuario.nome))
-}
-
-function buscar(trecho) {
-
-    let temTrechoNoNome = usuario => usuario.nome.includes(trecho);
-
-    let usuariosComNomesBuscados = usuarios.filter(temTrechoNoNome);
-
-    return usuariosComNomesBuscados;
-}
-
-function salvar(arrayDeUsuarios) {
+function listarNomes(){
     // Seu código aqui
 }
 
-function cadastrar(objeto) {
+function salvar(arrayDeUsuarios){
+    const fs = require('fs');
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4));
+}
+
+function cadastrar(objeto){
+// Seu código aqui
+}
+
+function detalhar(idUsuario){
+// Seu código aqui
+}
+
+function remover(idDoUsuarioParaRemover){
     // Seu código aqui
 }
 
-function detalhar(idUsuario) {
+function alterar(novosDados, idUsuario){
     // Seu código aqui
 }
 
-function remover(idDoUsuarioParaRemover) {
+function addEndereco(novoEndereco, idUsuario){
     // Seu código aqui
 }
 
-function alterar(novosDados, idUsuario) {
+function removerEndereco(posicaoDoEndereco, idUsuario){
+// Seu código aqui
+}
+
+function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
+// Seu código aqui        
+}
+
+function addFormaDePagamento(novaFormaDePagamento, idUsuario){
     // Seu código aqui
 }
 
-function addEndereco(novoEndereco, idUsuario) {
+function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
     // Seu código aqui
 }
 
-function removerEndereco(posicaoDoEndereco, idUsuario) {
-    // Seu código aqui
-}
-
-function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario) {
-    // Seu código aqui        
-}
-
-function addFormaDePagamento(novaFormaDePagamento, idUsuario) {
-    // Seu código aqui
-}
-
-function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario) {
-    // Seu código aqui
-}
-
-function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario) {
+function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
     // Seu código aqui
 }
 
 const UsuariosServices = {
     cadastrar,
-    buscar,
-    listarNomes,
     listar,
+    listarNomes,
     salvar,
     detalhar,
     remover,
